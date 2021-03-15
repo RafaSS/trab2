@@ -4,7 +4,7 @@ import {UsuarioModel} from "./Usuario.model";
 
 export interface ContaModel {
   id: number;
-  dataVencimento: Moment;
+  dataVencimento: Moment | string;
   situacao: boolean;
   usuario: UsuarioModel;
   descricao: string;

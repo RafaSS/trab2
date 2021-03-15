@@ -49,6 +49,7 @@ export class AddContaPage implements OnInit {
     if (this.id) {
       this.contaService.obterContaPorId(Number(this.id)).subscribe(conta => {
         this.conta = conta;
+        this.conta.dataVencimento = moment(this.conta.dataVencimento).format('yyyy-MM-DD');
       });
     }
   }
