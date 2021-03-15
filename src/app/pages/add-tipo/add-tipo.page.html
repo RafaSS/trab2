@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tipo"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="user" (click)="f.logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>tipos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="submitForm()">
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="tipo.nome" name="nome" required></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="block" color="primary">Salvar</ion-button>
+    <ion-button type="button" expand="block" color="danger" (click)="deletarTipo()">Apagar tipo</ion-button>
+  </form>
+</ion-content>
+
