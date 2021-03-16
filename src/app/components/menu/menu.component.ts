@@ -11,6 +11,7 @@ export class MenuComponent implements OnInit {
   public appPages = [
     {title: 'Contas', url: '/conta', icon: 'people'},
     {title: 'Tipos de conta', url: '/tipo', icon: 'book'},
+    {title: 'Alterar senha', url: '/editar', icon: 'create'},
   ];
 
   constructor(

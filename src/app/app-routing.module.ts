@@ -58,6 +58,11 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthModule),
     canActivate: [CanActiveService]
+  },
+  {
+    path: 'editar',
+    loadChildren: () => import('./pages/alterar-senha/alterar-senha.module').then(m => m.AlterarSenhaPageModule),
+    canActivate: [CanActiveService]
   }
 ];
 

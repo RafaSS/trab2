@@ -26,4 +26,8 @@ export class AuthService {
     return this.http.get<boolean>(`${environment.apiUrl}public/usuarios/${email}/exists}`);
   }
 
+  editarSenha(usuario: UsuarioModel) {
+    return this.http.put<UsuarioModel>(`${environment.apiUrl}public/usuarios/`, usuario);
+  }
+
 }
