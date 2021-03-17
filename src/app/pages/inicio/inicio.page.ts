@@ -26,6 +26,7 @@ export class InicioPage implements OnInit {
   }
 
   ionViewWillEnter() {
+    this.user = JSON.parse(localStorage.getItem('user'));
     this.contaService.obterContasPorUsuario().subscribe(contas => {
       if (contas) {
         this.contas = contas;

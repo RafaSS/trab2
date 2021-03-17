@@ -28,6 +28,7 @@ export class AddTipoPage implements OnInit {
   }
 
   ionViewWillEnter() {
+    this.user = JSON.parse(localStorage.getItem('user'));
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     if (this.id) {
       this.tipoService.obterTipoPorId(Number(this.id)).subscribe(tipo => {

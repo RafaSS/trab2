@@ -23,6 +23,7 @@ export class TipoPage implements OnInit {
   }
 
   ionViewWillEnter() {
+    this.user = JSON.parse(localStorage.getItem('user'));
     this.tipoService.obterTipos().subscribe(tipos => {
       this.tipos = tipos;
     }, () => this.tipos = []);

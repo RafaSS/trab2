@@ -32,7 +32,7 @@
 
     <ion-item>
       <ion-label>Data</ion-label>
-      <ion-input type="date" [(ngModel)]="conta.dataVencimento" required name="data"></ion-input>
+      <ion-datetime type="date" displayFormat="DD/MM/YYYY" [(ngModel)]="conta.dataVencimento" required name="data"></ion-datetime>
     </ion-item>
     <ion-item>
       <ion-label>Situação</ion-label>
