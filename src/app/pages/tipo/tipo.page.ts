@@ -25,7 +25,7 @@ export class TipoPage implements OnInit {
   ionViewWillEnter() {
     this.tipoService.obterTipos().subscribe(tipos => {
       this.tipos = tipos;
-    });
+    }, () => this.tipos = []);
   }
 
 }

@@ -21,6 +21,7 @@
       </ion-item>
     </ion-item-sliding>
   </ion-list>
+  <h4 class="ion-text-center" *ngIf="!tipos || tipos?.length === 0">Vazio</h4>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button routerLink="/add-tipo" color="primary">

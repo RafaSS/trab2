@@ -9,7 +9,6 @@ import {UsuarioModel} from "../../../classes/Usuario.model";
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  users: any[] = [];
   user: UsuarioModel = {
     nome: null,
     senha: null,
@@ -26,17 +25,13 @@ export class RegisterComponent implements OnInit {
   }
 
   ionViewWillEnter() {
-    this.users = JSON.parse(localStorage.getItem('users'));
-    if (!this.users) {
-      this.users = [];
-    }
   }
 
   async submitForm() {
-    if (this.user.senha && this.user.nome) {
+    if (this.user.senha && this.user.email && this.user.nome) {
       this.authService.verificarEmail(this.user.email).subscribe(() => {
         this.authService.register(this.user).subscribe(user => {
-          localStorage.setItem('user', JSON.stringify(user));
+          alert('Cadastrado com sucesso');
           this.navController.navigateBack('/auth/login');
         }, () => alert('Erro ao cadastrar'));
       }, () => alert('Email já existe'));

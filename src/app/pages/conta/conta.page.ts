@@ -24,6 +24,6 @@ export class ContaPage implements OnInit {
   async ionViewWillEnter() {
     this.contaService.obterContasPorUsuario().subscribe(contas => {
       this.contas = contas;
-    });
+    }, () => this.contas = []);
   }
 }

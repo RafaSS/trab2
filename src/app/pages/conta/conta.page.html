@@ -21,7 +21,7 @@
       </ion-item>
     </ion-item-sliding>
   </ion-list>
-
+  <h4 class="ion-text-center" *ngIf="!contas || contas?.length === 0">Vazio</h4>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button routerLink="/add-conta" color="primary">
       <ion-icon name="add"></ion-icon>

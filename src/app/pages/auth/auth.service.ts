@@ -23,7 +23,7 @@ export class AuthService {
   }
 
   verificarEmail(email: string) {
-    return this.http.get<boolean>(`${environment.apiUrl}public/usuarios/${email}/exists}`);
+    return this.http.get<boolean>(`${environment.apiUrl}public/usuarios/${email}/exists`);
   }
 
   editarSenha(usuario: UsuarioModel) {
