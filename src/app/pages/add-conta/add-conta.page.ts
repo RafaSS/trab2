@@ -8,6 +8,7 @@ import {UsuarioModel} from "../../classes/Usuario.model";
 import {TipoService} from "../tipo/tipo.service";
 import {TipoModel} from "../../classes/Tipo.model";
 import * as moment from "moment";
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-conta',
@@ -30,6 +31,12 @@ export class AddContaPage implements OnInit {
     descricao: null,
     usuario: null
   };
+
+  valor = new FormControl('', Validators.required);
+  dataVencimento = new FormControl('', Validators.required);
+  situacao = new FormControl('', Validators.required);
+  nadescricaome = new FormControl('', Validators.required);
+  usuario = new FormControl('', Validators.required);
 
   constructor(
     private activatedRoute: ActivatedRoute,
