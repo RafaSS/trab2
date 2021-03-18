@@ -1,42 +1,28 @@
-<ion-header>
-  <ion-toolbar color="dark">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="conta"></ion-back-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button *ngIf="user" (click)="f.logout()">
-        <ion-icon name="log-out-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title>contas</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
   <form (ngSubmit)="submitForm()">
     <ion-item>
       <ion-label position="floating">Descrição</ion-label>
-      <ion-input type="E-mail" [(ngModel)]="conta.descricao" required name="desc"></ion-input>
+      <ion-input type="E-mail" formControlName="descricao" [(ngModel)]="conta.descricao" required name="desc"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Tipo</ion-label>
-      <ion-select [(ngModel)]="conta.tipo.id" name="tipo" cancel-text="Cancelar" ok-text="Confirmar">
+      <ion-select formControlName="tipo" [(ngModel)]="conta.tipo.id" name="tipo" cancel-text="Cancelar" ok-text="Confirmar">
         <ion-select-option *ngFor="let tipo of tipos" [value]="tipo!.id">{{tipo.nome}}</ion-select-option>
       </ion-select>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Valor</ion-label>
-      <ion-input [(ngModel)]="conta.valor" required name="valor" placeholder="(R$) Real" [brmasker]="{money: true, thousand: '.',  decimalCaracter: ',', decimal: '2'}"></ion-input>
+      <ion-input [(ngModel)]="conta.valor" required formControlName="valor"  name="valor" placeholder="(R$) Real" [brmasker]="{money: true, thousand: '.',  decimalCaracter: ',', decimal: '2'}"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Data</ion-label>
-      <ion-datetime type="date" displayFormat="DD/MM/YYYY" [(ngModel)]="conta.dataVencimento" required name="data"></ion-datetime>
+      <ion-datetime type="date" displayFormat="DD/MM/YYYY" [(ngModel)]="conta.dataVencimento" formControlName="data"  required name="data"></ion-datetime>
     </ion-item>
     <ion-item>
       <ion-label>Situação</ion-label>
-      <ion-select required [(ngModel)]="conta.situacao" name="situacao" cancel-text="Cancelar" ok-text="Confirmar">
+      <ion-select required [(ngModel)]="conta.situacao" name="situacao" formControlName="situacao" cancel-text="Cancelar" ok-text="Confirmar">
         <ion-select-option [value]="true">Quitada</ion-select-option>
         <ion-select-option [value]="false">Em Aberto</ion-select-option>
       </ion-select>
